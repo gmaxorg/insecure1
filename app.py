@@ -13,12 +13,6 @@ def index():
     # 1 - SQL Injection
     db = sqlite3.connect("tutorial.db")
     cursor = db.cursor()
-    username = ''
-    password = ''
-    try:
-        cursor.execute("SELECT * FROM users WHERE username = '%s' AND password = '%s'" % (username, password))
-    except:
-        pass
 
     if request.method == 'POST':
         if 'username' in request.form:
