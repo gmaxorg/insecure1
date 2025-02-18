@@ -33,7 +33,7 @@ def index():
                 else:
                     output = "User not found."
             except Exception as e:
-                output = f"SQL Error: {e}"
+                output = f"SQL Error"
 
     return render_template_string("""
         <h1>Intentionally Insecure App</h1>
@@ -41,4 +41,4 @@ def index():
     """, output=output)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080, debug=True)
+    app.run(host='0.0.0.0', port=8080, debug=False)
